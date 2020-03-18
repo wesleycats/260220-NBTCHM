@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f4aab3c732a57a6489b18db4d28bed55
+guid: 94ba422b3b81ac540838d4b7015c63c7
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -149,10 +149,10 @@ TextureImporter:
       name: character_walk_sheet_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 298
-        width: 130
-        height: 281
+        x: 19
+        y: 1011
+        width: 438
+        height: 948
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,10 +170,10 @@ TextureImporter:
       name: character_walk_sheet_1
       rect:
         serializedVersion: 2
-        x: 153
-        y: 301
-        width: 104
-        height: 274
+        x: 519
+        y: 1023
+        width: 349
+        height: 923
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: character_walk_sheet_2
       rect:
         serializedVersion: 2
-        x: 304
-        y: 302
-        width: 78
-        height: 280
+        x: 1031
+        y: 1024
+        width: 258
+        height: 945
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,10 +212,10 @@ TextureImporter:
       name: character_walk_sheet_3
       rect:
         serializedVersion: 2
-        x: 439
-        y: 301
-        width: 79
-        height: 282
+        x: 1488
+        y: 1023
+        width: 262
+        height: 951
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,10 +233,10 @@ TextureImporter:
       name: character_walk_sheet_4
       rect:
         serializedVersion: 2
-        x: 6
-        y: 7
-        width: 125
-        height: 278
+        x: 24
+        y: 28
+        width: 417
+        height: 937
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,10 +254,10 @@ TextureImporter:
       name: character_walk_sheet_5
       rect:
         serializedVersion: 2
-        x: 149
-        y: 7
-        width: 102
-        height: 274
+        x: 506
+        y: 27
+        width: 342
+        height: 925
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,10 +275,10 @@ TextureImporter:
       name: character_walk_sheet_6
       rect:
         serializedVersion: 2
-        x: 305
-        y: 7
-        width: 75
-        height: 279
+        x: 1035
+        y: 29
+        width: 248
+        height: 938
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,10 +296,10 @@ TextureImporter:
       name: character_walk_sheet_7
       rect:
         serializedVersion: 2
-        x: 440
-        y: 7
-        width: 86
-        height: 283
+        x: 1492
+        y: 29
+        width: 287
+        height: 951
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -316,7 +316,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 02f6a4a9bb14ca24bb5eb86542cb7ad5
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
