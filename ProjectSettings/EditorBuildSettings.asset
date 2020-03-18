@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Main.unity
-    guid: 20ce5d02833f9824199c0e68203578f4
+    guid: e143aa6a28a753d45a15f180b9367c35
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e5148a5b4ca498f4eb44a915e6b6b4d5,
       type: 2}

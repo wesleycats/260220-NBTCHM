@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,13 +23,16 @@ public static class ProgressManager
 		public bool badge = false;
 	}
 
+
 	/// <summary>
 	/// SaveData holds all the data on locations (needs to be set manually)
 	/// </summary>
 	[System.Serializable]
 	public class SaveData
 	{
+		public int index = 0;
 		public List<Location> locations = new List<Location>();
+		public string timestamp = "";
 	}
 
 	#endregion
@@ -54,21 +58,35 @@ public static class ProgressManager
 	/// </summary>
 	/// <param name="data"></param>
 	/// <param name="index"></param>
-	public static void SaveGame(SaveData data, int index)
+	public static void Save(SaveData data)
 	{
+		data.timestamp = System.DateTime.Now.ToString();
+
+		Debug.Log(data.timestamp);
+
 		string json = JsonUtility.ToJson(data);
 
-		SaveJSON(json, index);
+		SaveJSON(json, data.index);
 	}
 
+
 	/// <summary>
-	/// Call method to load the saved progress
+	/// Call method to load the saved progress to the save
 	/// </summary>
 	/// <param name="index"></param>
 	/// <returns></returns>
-	public static string LoadGame(int index)
+	public static SaveData GetSaveData(int index)
 	{
-		return LoadJSON(filePath, index);
+		return JsonUtility.FromJson<SaveData>(LoadJSON(filePath, index));
+	}
+
+
+	public static bool isSaveDataSet(SaveData data)
+	{
+		// Return true when there is no save file yet
+		if (GetSaveData(data.index) == null) return true;
+
+		return data.timestamp == GetSaveData(data.index).timestamp;
 	}
 
 	#endregion
@@ -85,11 +103,7 @@ public static class ProgressManager
 	private static void SaveJSON(string json, int index)
 	{
 		directory = Application.persistentDataPath + "/" + folderName;
-
-		if (!Directory.Exists(directory))
-		{
-			Directory.CreateDirectory(directory);
-		}
+		Directory.CreateDirectory(directory);
 
 		filePath = directory + "/" + fileName + "_" + index + fileExtension;
 
@@ -108,17 +122,28 @@ public static class ProgressManager
 	private static string LoadJSON(string path, int index)
 	{
 		// Sets path with given index
-		path += "_" + index;
+		//path += "_" + index;
 
 		if (!File.Exists(path)) 
 		{
-			Debug.LogError("PATH IS INACCESSIBLE");
+			Debug.LogError(path + " IS INACCESSIBLE");
 			return "";
 		}
 
-		Debug.Log("JSON LOADED FROM " + path);
-
 		return File.ReadAllText(path);
+	}
+
+
+	private static void DeleteJSON(string index)
+	{
+		directory = Application.persistentDataPath + "/" + folderName;
+		Directory.CreateDirectory(directory);
+
+		filePath = directory + "/" + fileName + "_" + index + fileExtension;
+
+		File.Delete(filePath);
+
+		Debug.Log("JSON DELETED FROM " + filePath);
 	}
 
 	#endregion

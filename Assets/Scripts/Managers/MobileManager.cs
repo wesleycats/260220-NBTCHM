@@ -27,6 +27,7 @@ public class MobileManager : MonoBehaviour
 	public string _PreviousState { get { return usedStates[usedStates.Count - 2]; } }
 
 	public Animator MobileAnimator = null;
+	public DataManager DataManager = null;
 
 	#endregion
 
@@ -118,9 +119,9 @@ public class MobileManager : MonoBehaviour
 	}
 
 
-	public void Quit()
+	public void QuitGame()
 	{
-		Application.Quit();
+		StartCoroutine(Quit());
 	}
 
 
@@ -143,6 +144,20 @@ public class MobileManager : MonoBehaviour
 
 
 	#region PRIVATE_METHODS
+
+	private IEnumerator Quit()
+	{
+		ProgressManager.SaveData data = DataManager._SaveData;
+
+		ProgressManager.Save(data);
+
+		yield return new WaitUntil(() => ProgressManager.isSaveDataSet(data));
+
+		Debug.Log("QUIT GAME");
+  
+		Application.Quit();
+	}
+
 
 	private void SetDirections(List<string> dirs, bool set)
 	{
