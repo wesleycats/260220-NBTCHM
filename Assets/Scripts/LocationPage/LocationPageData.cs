@@ -17,8 +17,8 @@ public class LocationPageData : ScriptableObject
 [System.Serializable]
 public struct Review
 {
-    public string Name;
-    public int Stars;
+    public string reviewName;
+    public int reviewStars;
     [TextArea(4, 3)]
-    public string Comment;
+    public string reviewComment;
 }
