@@ -100,7 +100,7 @@ public class MobileManager : MonoBehaviour
 	/// </summary>
 	public void Pause()
 	{
-
+		// Player controls disabled
 	}
 
 
